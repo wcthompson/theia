@@ -3,10 +3,6 @@ Module.register("neopixels",{
   defaults: {
     something: '???',
   },
-  // Define required scripts.
-  getScripts: function() {
-    return ["moment.js"];
-  },
   // Define styles.
   getStyles: function() {
     return ["neopixels.css"];
@@ -18,9 +14,9 @@ Module.register("neopixels",{
     var self = this;
 
     // we probably don't actually need a dom element.
-    setInterval(function() {
+    /*setInterval(function() {
       self.updateDom(); 
-    }, 1000);
+    }, 1000);*/
   },
   // Override dom generator.
   getDom: function() {

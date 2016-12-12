@@ -1,18 +1,5 @@
 var NodeHelper = require("node_helper");
 
-function shutdown(signal, value) {
-  console.log('Stopped by ' + signal);
-  lightsOff();
-  process.nextTick(function () { process.exit(0); });
-}
-
-Object.keys(signals).forEach(function (signal) {
-  process.on(signal, function () {
-    shutdown(signal, signals[signal]);
-  });
-});
-
-
 var lightsOff = function () {
     for (var i = 0; i < NUM_LEDS; i++) {
       pixelData[i] = color(0, 0, 0);
@@ -20,12 +7,6 @@ var lightsOff = function () {
   ws281x.render(pixelData);
   ws281x.reset();
 }
-
-var signals = {
-  'SIGINT': 2,
-  'SIGTERM': 15
-};
-
 
 // generate rainbow colors accross 0-255 positions.
 function wheel(pos) {
@@ -63,14 +44,14 @@ module.exports = NodeHelper.create({
       ws281x.render(pixelData);
     }, 1000 / 30);
 
-    console.log('Rainbow started. Press <ctrl>+C to exit.');
+    console.log('Rainbow started.');
   },
 
   // Override socketNotificationReceived method.
   socketNotificationReceived: function(notification, payload) {
-    if (notification === "ADD_CALENDAR") {
-      //console.log('ADD_CALENDAR: ');
-      this.createFetcher(payload.url, payload.fetchInterval, payload.maximumEntries, payload.maximumNumberOfDays, payload.user, payload.pass);
+    if (notification === "NEOPIXEL") {
+      console.log('GOT NEOPIXELS: ');
+      
     }
   }
 });
