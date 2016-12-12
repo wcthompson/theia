@@ -1,5 +1,7 @@
 var NodeHelper = require("node_helper");
 
+const NUM_LEDS = 120;
+
 var lightsOff = function () {
     for (var i = 0; i < NUM_LEDS; i++) {
       pixelData[i] = color(0, 0, 0);
