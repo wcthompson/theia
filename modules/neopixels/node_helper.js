@@ -1,8 +1,12 @@
+var ws281x = require('rpi-ws281x-native');
 var NodeHelper = require("node_helper");
 
 const NUM_LEDS = 120;
 
 var  pixelData = new Uint32Array(NUM_LEDS);
+const brightness = 128;
+
+ws281x.init(NUM_LEDS);
 
 lightsOff = function () {
     for (var i = 0; i < NUM_LEDS; i++) {

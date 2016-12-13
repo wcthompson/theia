@@ -18,8 +18,8 @@ var config = {
                                 clockBold: false
 			}
 		},
-                {
-                	module: 'neopixels',
+		{
+			module: 'camera',
 		},
 	]
 };

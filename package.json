@@ -37,7 +37,7 @@
     "time-grunt": "latest"
   },
   "dependencies": {
-    "electron-prebuilt": "latest",
+    "electron": "1.2.5",
     "express": "^4.14.0",
     "feedme": "latest",
     "iconv-lite": "latest",
