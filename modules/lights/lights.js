@@ -1,4 +1,4 @@
-Module.register("camera", {
+Module.register("lights", {
 
   // Module config defaults.
   defaults: {
@@ -7,8 +7,7 @@ Module.register("camera", {
   // Override dom generator.
   getDom: function() {
 
-    const wrapper = document.createElement("div");
-    const imageContainer = document.createElement("div");
+    var wrapper = document.createElement("div");
 
     // Return the wrapper to the dom.
     return wrapper;
@@ -16,8 +15,8 @@ Module.register("camera", {
 
   // Listen for camera notifcations
   notificationReceived: function(notification, payload, sender) {
-    if (notification === 'TAKE_PHOTO') {
-      this.sendSocketNotification('TAKE_PHOTO');
+    if (notification === 'LIGHTS_ON' || notification === 'LIGHTS_OFF') {
+      this.sendSocketNotification(notification);
     }
   },
 });

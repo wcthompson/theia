@@ -5,18 +5,25 @@ module.exports = NodeHelper.create({
   // Override start method.
   start: function() {
     console.log("Starting node helper for: " + this.name);
-    const proc = spawn('python', ['modules/camera/capture.py', 'photos/startup.jpg']);
+    const proc = spawn('python', ['modules/lights/lit.py', 'on']);
     proc.stderr.on('data', function (data) { console.log('Data: ' + data); });
     proc.stdout.on('data', function (data) { console.log('Data: ' + data); });
   },
 
   // Override socketNotificationReceived method.
   socketNotificationReceived: function(notification, payload) {
-    if (notification === "TAKE_PHOTO") {
-      console.log('Got camera notification in camera node helper');
-      const proc = spawn('python', ['modules/camera/capture.py', 'photos/' + Date.now() + '.jpg']);
+    if (notification === "LIGHTS_ON") {
+      console.log('Got lights on notification in lights node helper');
+      const proc = spawn('python', ['modules/lights/lit.py', 'on']);
       proc.stderr.on('data', function (data) { console.log('Data: ' + data); });
       proc.stdout.on('data', function (data) { console.log('Data: ' + data); });
+  },
+    } else if (notification === "LIGHTS_OFF") {
+      console.log('Got lights off notification in lights node helper');
+      const proc = spawn('python', ['modules/lights/lit.py', 'off']);
+      proc.stderr.on('data', function (data) { console.log('Data: ' + data); });
+      proc.stdout.on('data', function (data) { console.log('Data: ' + data); });
+  },
     }
   }
 });
