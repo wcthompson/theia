@@ -13,24 +13,6 @@ Module.register("voicecontrol", {
 
     defaults: {
 		models: [
-					{
-						keyword: "Show Camera",
-						description: "Say 'Show Camera' to display camera",
-						file: "showCamera.pmdl",
-						message: "SHOW_CAMERA"
-					},
-					{
-						keyword: "Hide Camera",
-						description: "Say 'Hide Camera' to hide camera",
-						file: "hideCamera.pmdl",
-						message: "HIDE_CAMERA"
-					},
-					{
-						keyword: "Selfie",
-						description: "Say 'Selfie' when camera is visible",
-						file: "selfie.pmdl",
-						message: "SELFIE"
-					},
 				]
 	},
 
