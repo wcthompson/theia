@@ -15,12 +15,26 @@ var config = {
 			config: {
 				displaySeconds: false,
 				showPeriodUpper: true,
-                                clockBold: false
+        clockBold: false
 			}
 		},
 		{
 			module: 'camera',
 		},
+	{
+            module: 'voicecontrol',
+            position: 'bottom_left',
+            config: {
+                models: [
+                    {
+                        keyword: "take_a_picture",   // keyword 
+                        description: "Say 'Take a Picture' to 📸",
+                        file: "take_a_picture.pmdl", // trained model file name
+                        message: "TAKE_PICTURE"   // notification message that's broadcast in the MagicMirror app
+                    }
+                ]
+            }
+        }
 	]
 };
 
