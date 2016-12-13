@@ -22,6 +22,7 @@ def interrupt_callback():
 #     sys.exit(-1)
 
 models = sys.argv[1:]
+print models;
 
 def hotword_detected_callback():
     print("!Hotword Detected")
@@ -30,7 +31,7 @@ def hotword_detected_callback():
 # capture SIGINT signal, e.g., Ctrl+C
 signal.signal(signal.SIGINT, signal_handler)
 
-sensitivity = [0.6]*len(models)
+sensitivity = [0.8]*len(models)
 detector = snowboydecoder.HotwordDetector(models, sensitivity=sensitivity)
 # callbacks = [print("DETECTED:1"),
 #               print("DETECTED:2")]
