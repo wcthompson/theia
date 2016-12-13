@@ -12,6 +12,7 @@ module.exports = NodeHelper.create({
 
   // Override socketNotificationReceived method.
   socketNotificationReceived: function(notification, payload) {
+    console.log('lights node helper received ' + notification);
     if (notification === "LIGHTS_ON") {
       console.log('Got lights on notification in lights node helper');
       const proc = spawn('python', ['modules/lights/lit.py', 'on']);

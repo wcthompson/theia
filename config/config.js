@@ -31,6 +31,18 @@ var config = {
                         description: "Say 'Take a Picture' to 📸",
                         file: "take_a_picture.pmdl", // trained model file name
                         message: "TAKE_PICTURE"   // notification message that's broadcast in the MagicMirror app
+                    },
+                    {
+                        keyword: "lights on",   // keyword 
+                        description: "",
+                        file: "lights_on.pmdl", // trained model file name
+                        message: "LIGHTS_ON"   // notification message that's broadcast in the MagicMirror app
+                    }, 
+                    {
+                        keyword: "lights off",   // keyword 
+                        description: "",
+                        file: "lights_off.pmdl", // trained model file name
+                        message: "LIGHTS_OFF"   // notification message that's broadcast in the MagicMirror app
                     }
                 ]
             }
