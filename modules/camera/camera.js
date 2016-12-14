@@ -6,6 +6,7 @@ Module.register("camera", {
 
   start: function() {
     this.sendSocketNotification("FETCH_ALL_PHOTOS");
+    this.photos = ['~/theia/photos/william.jpg'];
   },
 
   socketNotificationReceived: function(notification, payload) {
