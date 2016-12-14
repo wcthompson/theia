@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -n "GET /LIGHTS_ON" | nc 127.0.0.1 5000
