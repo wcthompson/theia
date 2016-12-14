@@ -17,8 +17,12 @@ Module.register("command_center", {
     this.sendSocketNotification("START_SERVER", this.config);
   },  
 
-  // Listen for camera notifcations
   notificationReceived: function(notification, payload, sender) {
     return;
   },
+
+  socketNotificationReceived: function(notification, payload) {
+    console.log("command_center got: " + notification)
+    this.sendNotification(notification);
+   
 });
