@@ -1,2 +1,0 @@
-<s> LIGHTS OFF </s>
-<s> LIGHTS ON </s>
