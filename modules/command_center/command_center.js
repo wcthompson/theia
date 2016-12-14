@@ -14,6 +14,7 @@ Module.register("command_center", {
   },
 
   start: function() { 
+    Log.log('Log.log is working');
     this.sendSocketNotification("START_SERVER");
   },  
 
