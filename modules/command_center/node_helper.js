@@ -22,7 +22,7 @@ module.exports = NodeHelper.create({
         // emit the message to other modules
         proc.stdout.on('data', function (data) { 
             console.error('command center stdout: ' + data); 
-            this.sendSocketNotification(data, "");
+            this.sendSocketNotification(data, {});
         }); 
     }
   

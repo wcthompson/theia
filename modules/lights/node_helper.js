@@ -16,7 +16,6 @@ module.exports = NodeHelper.create({
       const proc = sudo('python', ['PYTHON_PATH=".:build/lib.linux-armv7l-2.7"', 'python', 'examples/lit.py', 'on'], opts);
       proc.stderr.on('data', function (data) { console.log('Data: ' + data); });
       proc.stdout.on('data', function (data) { console.log('Data: ' + data); });
-  },
     } else if (notification === "LIGHTS_OFF") {
       console.log('Got lights off notification in lights node helper');
       const proc = sudo('python', ['PYTHON_PATH=".:build/lib.linux-armv7l-2.7"', 'python', 'examples/lit.py', 'off'], opts);
