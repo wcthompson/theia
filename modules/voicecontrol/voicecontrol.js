@@ -36,7 +36,7 @@ Module.register("voicecontrol", {
 
     start: function() { 
 
-        this.sendSocketNotification("CONNECT", this.config);
+        this.sendSocketNotification("START SERVER", this.config);
 
     },
 

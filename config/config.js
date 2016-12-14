@@ -22,28 +22,9 @@ var config = {
             module: 'camera',
             position: 'bottom_right'
         },
-    {
-            module: 'voicecontrol',
-            position: 'bottom_left',
-            config: {
-                models: [
-                    {
-                        keyword: "take_a_picture",   // keyword 
-                        description: "Say 'Take a Picture' to 📸",
-                        message: "TAKE_PICTURE"   // notification message that's broadcast in the MagicMirror app
-                    },
-                    {
-                        keyword: "lights on",   // keyword 
-                        description: "",
-                        message: "LIGHTS_ON"   // notification message that's broadcast in the MagicMirror app
-                    }, 
-                    {
-                        keyword: "lights off",   // keyword 
-                        description: "",
-                        message: "LIGHTS_OFF"   // notification message that's broadcast in the MagicMirror app
-                    }
-                ]
-            }
+        {
+        	module: 'command_center'
+        	position: 'bottom_left'
         }
     ]
 };
