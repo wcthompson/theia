@@ -21,7 +21,7 @@ module.exports = NodeHelper.create({
 
         // emit the message to other modules
         proc.stdout.on('data', function (data) { 
-            console.log('command center stdout: ' + ); 
+            console.log('command center stdout: ' ); 
             self.sendSocketNotification('COMMAND_RECIEVED', data);
         }); 
     }
