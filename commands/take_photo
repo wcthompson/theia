@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -n "GET /TAKE_PHOTO" | nc 127.0.0.1 5000
