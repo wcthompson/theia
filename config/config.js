@@ -1,5 +1,5 @@
 var config = {
-    port: 8081,
+    port: 8080,
 
     language: 'en',
     timeFormat: 12,
