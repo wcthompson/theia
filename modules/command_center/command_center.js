@@ -14,14 +14,14 @@ Module.register("command_center", {
   },
 
   start: function() { 
-    Log.log('Log.log is working');
     this.sendSocketNotification("START_SERVER");
   },  
 
   socketNotificationReceived: function(notification, payload){
-    Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
+    console.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
     if (notification === "COMMAND_RECIEVED"){
         //Broadcast the message
+        Log.log('sendSocketNotification');
         Log.log(payload);
         this.sendNotification(payload);
     }
