@@ -21,9 +21,11 @@ Module.register("command_center", {
     return;
   },
 
-  socketNotificationReceived: function(notification, payload) {
-    console.log("command_center got: " + notification);
-    this.sendNotification(notification);
+  socketNotificationReceived: function(notification, payload){
+    if (notification === "COMMAND_RECIEVED"){
+        //Broadcast the message
+        console.error(notification);
+        this.sendNotification(notification);
+    }
   }
-   
 });
