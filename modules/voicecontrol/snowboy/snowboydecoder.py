@@ -41,6 +41,8 @@ def play_audio_file(fname=DETECT_DING):
     :param str fname: wave file name
     :return: None
     """
+    return;
+    # SKIP PYAUDIO
     ding_wav = wave.open(fname, 'rb')
     ding_data = ding_wav.readframes(ding_wav.getnframes())
     audio = pyaudio.PyAudio()
