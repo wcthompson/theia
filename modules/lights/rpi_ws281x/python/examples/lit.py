@@ -99,4 +99,4 @@ if __name__ == '__main__':
             strip.show()
             time.sleep(0.01)
     else:
-        rainbow(strip, wait_ms=5, iterations=100)
+        rainbow(strip, wait_ms=5, iterations=1000)
