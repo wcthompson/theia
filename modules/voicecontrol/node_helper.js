@@ -9,6 +9,7 @@
 
 const NodeHelper = require('node_helper');
 const spawn = require('child_process').spawn;
+const Psc = require('pocketsphinx-continuous');
 
 module.exports = NodeHelper.create({
     start: function () {
@@ -30,31 +31,22 @@ module.exports = NodeHelper.create({
         var kwsSensitivity = 0.5;
         this.started = true;
         var self = this;
-        // Initilize the keyword spotter
-        var params = ['./modules/voicecontrol/snowboy/kws-multiple.py']; //, modelFile1, modelFile2];
-
-
-        models.forEach(function(model) {
-            params.push(model.file);
-        }, this);
-
         //var kwsProcess = spawn('python', ['./speech-osx/kws-multiple.py', modelFile1, modelFile2], { detached: false });
-        var kwsProcess = spawn('python', params, { detached: false });
-        // Handel messages from python script
-        kwsProcess.stderr.on('data', function (data) {
-            var message = data.toString();
-            if (message.startsWith('INFO')) {
-                var items = message.split(':');
-                var index = parseInt(items[2].split(' ')[1]);
-                var model = models[index - 1];
-                self.sendSocketNotification("KEYWORD_SPOTTED", model);
+        var ps = new Psc({
+          setId: '4650'  // change this to the number for our language model 
+          verbose: false // Setting this to true will give you a whole lot of debug output in your console.
+        });
 
-            } else {
-                console.error(message);
-            }
+        ps.on('data', function (data) {
+            var message = data.toString();
+            console.error(message)
+            // TODO: fire the notification associated with this keyword
+            //var keyword = message.split(' ')[0]
+            //self.sendSocketNotification("KEYWORD_SPOTTED", keyword);
+
         })
-        kwsProcess.stdout.on('data', function (data) {
-            console.log(data.toString());
+        ps.on('error', function (err) {
+            console.error(err);
         })
     }
   
