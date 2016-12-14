@@ -72,11 +72,11 @@ def theaterChaseRainbow(strip, wait_ms=50):
     """Rainbow movie theater light style chaser animation."""
     for j in range(256):
         for q in range(3):
-            for i in range(0, strip.numPixels(), 3):
+            for i in range(0, strip.numPixels(), 2):
                 strip.setPixelColor(i+q, wheel((i+j) % 255))
             strip.show()
             time.sleep(wait_ms/1000.0)
-            for i in range(0, strip.numPixels(), 3):
+            for i in range(0, strip.numPixels(), 2):
                 strip.setPixelColor(i+q, 0)
 
 if __name__ == '__main__':
