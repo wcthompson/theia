@@ -1,4 +1,4 @@
 #!/bin/bash
 cd ~/theia/modules/camera
-sudo python capture.py ~/theia/photos/${0}.jpg
+sudo python capture.py ~/theia/photos/${1}.jpg
 cd ~/theia
