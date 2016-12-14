@@ -26,7 +26,7 @@ module.exports = NodeHelper.create({
 
   filenamesInDirectory: function(directory) {
     const filenames = [];
-    fs.readdir(directory, (err, files) => {
+    fs.readdirSync(directory, (err, files) => {
       files.forEach(file => {
         filenames.push(file);
       });
