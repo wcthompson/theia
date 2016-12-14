@@ -33,7 +33,7 @@ module.exports = NodeHelper.create({
         var self = this;
         //var kwsProcess = spawn('python', ['./speech-osx/kws-multiple.py', modelFile1, modelFile2], { detached: false });
         var ps = new Psc({
-          setId: '4650'  // change this to the number for our language model 
+          setId: '4650',  // change this to the number for our language model 
           verbose: false // Setting this to true will give you a whole lot of debug output in your console.
         });
 
