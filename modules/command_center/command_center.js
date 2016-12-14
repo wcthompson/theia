@@ -17,15 +17,16 @@ Module.register("command_center", {
     this.sendSocketNotification("START_SERVER");
   },  
 
-  notificationReceived: function(notification, payload, sender) {
-    return;
-  },
-
   socketNotificationReceived: function(notification, payload){
+    console.error('command center: socketNotificationReceived');
     if (notification === "COMMAND_RECIEVED"){
         //Broadcast the message
-        console.error(notification);
-        this.sendNotification(notification);
+        console.error(payload);
+        this.sendNotification(payload);
     }
+  }
+
+  notificationReceived: function(notification, payload, sender) {
+    return;
   }
 });
