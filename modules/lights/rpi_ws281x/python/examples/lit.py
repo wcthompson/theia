@@ -87,13 +87,13 @@ if __name__ == '__main__':
     strip.begin()
 
     if argv[-1] == 'on':
-        for lvl in range(256):
+        for lvl in range(210):
             for i in range(strip.numPixels()):
                 strip.setPixelColor(i, Color(lvl, lvl, lvl))
             strip.show()
             time.sleep(0.01)
     elif argv[-1] == 'off':
-        for lvl in reversed(range(256)):
+        for lvl in reversed(range(210)):
             for i in range(strip.numPixels()):
                 strip.setPixelColor(i, Color(lvl, lvl, lvl))
             strip.show()
