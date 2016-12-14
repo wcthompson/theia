@@ -16,7 +16,6 @@ module.exports = NodeHelper.create({
 
     startServer : function() {
         this.started = true;
-        var self = this;
         const proc = spawn('python', ['modules/command_center/server.py']);
         proc.stderr.on('data', function (err) { console.log('Data: ' + err); });
 

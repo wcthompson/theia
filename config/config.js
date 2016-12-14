@@ -25,7 +25,10 @@ var config = {
         {
         	module: 'command_center',
         	position: 'bottom_left'
-        }
+        },
+        {	
+		module: 'lights',
+	},
     ]
 };
 

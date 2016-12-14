@@ -35,6 +35,7 @@ Module.register("camera", {
 
   // Listen for camera notifcations
   notificationReceived: function(notification, payload, sender) {
+    console.log('Camera module received notification to take a photo');
     if (notification === 'TAKE_PHOTO') {
       this.sendSocketNotification('TAKE_PHOTO');
     }
