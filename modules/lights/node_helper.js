@@ -15,13 +15,13 @@ module.exports = NodeHelper.create({
     console.log('lights node helper received ' + notification);
     if (notification === "LIGHTS_ON") {
       console.log('Got lights on notification in lights node helper');
-      const proc = spawn('python', ['modules/lights/lit.py', 'on']);
+      const proc = spawn('python', ['modules/lights/rpi_ws281x/python/examples/lit.py', 'on']);
       proc.stderr.on('data', function (data) { console.log('Data: ' + data); });
       proc.stdout.on('data', function (data) { console.log('Data: ' + data); });
   },
     } else if (notification === "LIGHTS_OFF") {
       console.log('Got lights off notification in lights node helper');
-      const proc = spawn('python', ['modules/lights/lit.py', 'off']);
+      const proc = spawn('python', ['modules/lights/rpi_ws281x/python/examples/lit.py', 'off']);
       proc.stderr.on('data', function (data) { console.log('Data: ' + data); });
       proc.stdout.on('data', function (data) { console.log('Data: ' + data); });
   },
