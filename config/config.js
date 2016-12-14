@@ -1,27 +1,28 @@
 var config = {
-	port: 8081,
+    port: 8081,
 
-	language: 'en',
-	timeFormat: 12,
-	units: 'imperial',
+    language: 'en',
+    timeFormat: 12,
+    units: 'imperial',
 
-	modules: [
-		{
-			module: 'alert',
-		},
-		{
-			module: 'clock',
-			position: 'top_left',
-			config: {
-				displaySeconds: false,
-				showPeriodUpper: true,
-        clockBold: false
-			}
-		},
-		{
-			module: 'camera',
-		},
-	{
+    modules: [
+        {
+            module: 'alert',
+        },
+        {
+            module: 'clock',
+            position: 'top_left',
+            config: {
+                displaySeconds: false,
+                showPeriodUpper: true,
+                clockBold: false
+            }
+        },
+        {
+            module: 'camera',
+            position: 'bottom_right'
+        },
+    {
             module: 'voicecontrol',
             position: 'bottom_left',
             config: {
@@ -47,7 +48,7 @@ var config = {
                 ]
             }
         }
-	]
+    ]
 };
 
 /*************** DO NOT EDIT THE LINE BELOW ***************/
