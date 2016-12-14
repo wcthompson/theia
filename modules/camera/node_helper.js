@@ -1,5 +1,6 @@
-var NodeHelper = require("node_helper");
+const NodeHelper = require("node_helper");
 const spawn = require('child_process').spawn;
+const fs = require('fs');
 
 module.exports = NodeHelper.create({
   // Override start method.
@@ -17,6 +18,19 @@ module.exports = NodeHelper.create({
       const proc = spawn('python', ['modules/camera/capture.py', 'photos/' + Date.now() + '.jpg']);
       proc.stderr.on('data', function (data) { console.log('Data: ' + data); });
       proc.stdout.on('data', function (data) { console.log('Data: ' + data); });
+    } else if (notification === "FETCH_ALL_PHOTOS") {
+      const photos = this.filenamesInDirectory('photos/');
+      this.sendSocketNotification("FETCHED_PHOTOS", photos);
     }
-  }
+  },
+
+  filenamesInDirectory: function(directory) {
+    const filenames = [];
+    fs.readdir(directory, (err, files) => {
+      files.forEach(file => {
+        filenames.push(file);
+      });
+    });
+    return filenames;
+  },
 });
