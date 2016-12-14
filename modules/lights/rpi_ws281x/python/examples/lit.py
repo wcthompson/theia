@@ -100,3 +100,4 @@ if __name__ == '__main__':
             time.sleep(0.01)
     else:
         theaterChaseRainbow(strip, wait_ms=5)
+        rainbow(strip, wait_ms=5, 4)
