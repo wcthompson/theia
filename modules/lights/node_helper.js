@@ -21,7 +21,7 @@ module.exports = NodeHelper.create({
       const proc = sudo('python', ['PYTHON_PATH=".:build/lib.linux-armv7l-2.7"', 'python', 'examples/lit.py', 'off'], opts);
       proc.stderr.on('data', function (data) { console.log('Data: ' + data); });
       proc.stdout.on('data', function (data) { console.log('Data: ' + data); });
-  },
     }
-  }
+  },
+
 });
