@@ -19,18 +19,17 @@ module.exports = NodeHelper.create({
       proc.stderr.on('data', function (data) { console.log('Data: ' + data); });
       proc.stdout.on('data', function (data) { console.log('Data: ' + data); });
     } else if (notification === "FETCH_ALL_PHOTOS") {
-      const photos = this.filenamesInDirectory('photos/');
-      this.sendSocketNotification("FETCHED_PHOTOS", photos);
+      this.filenamesInDirectory('photos/');
     }
   },
 
   filenamesInDirectory: function(directory) {
-    const filenames = [];
-    fs.readdirSync(directory, (err, files) => {
+    fs.readdir(directory, (err, files) => {
+      const filenames = [];
       files.forEach(file => {
         filenames.push(file);
       });
+      this.sendSocketNotification("FETCHED_PHOTOS", filenames);
     });
-    return filenames;
   },
 });
