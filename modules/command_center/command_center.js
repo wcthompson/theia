@@ -18,13 +18,13 @@ Module.register("command_center", {
   },  
 
   socketNotificationReceived: function(notification, payload){
-    console.error('command center: socketNotificationReceived');
+    Log.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
     if (notification === "COMMAND_RECIEVED"){
         //Broadcast the message
-        console.error(payload);
+        Log.log(payload);
         this.sendNotification(payload);
     }
-  }
+  },
 
   notificationReceived: function(notification, payload, sender) {
     return;

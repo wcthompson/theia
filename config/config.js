@@ -23,7 +23,7 @@ var config = {
             position: 'bottom_right'
         },
         {
-        	module: 'command_center'
+        	module: 'command_center',
         	position: 'bottom_left'
         }
     ]
