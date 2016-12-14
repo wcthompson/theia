@@ -14,7 +14,7 @@ Module.register("command_center", {
   },
 
   start: function() { 
-    this.sendSocketNotification("START_SERVER", this.config);
+    this.sendSocketNotification("START_SERVER");
   },  
 
   notificationReceived: function(notification, payload, sender) {
@@ -22,7 +22,7 @@ Module.register("command_center", {
   },
 
   socketNotificationReceived: function(notification, payload) {
-    console.log("command_center got: " + notification)
+    console.log("command_center got: " + notification);
     this.sendNotification(notification);
   }
    
