@@ -16,12 +16,13 @@ module.exports = NodeHelper.create({
 
     startServer : function() {
         this.started = true;
+        var self = this;
         const proc = spawn('python', ['modules/command_center/server.py']);
         proc.stderr.on('data', function (err) { console.log('Data: ' + err); });
 
         // emit the message to other modules
         proc.stdout.on('data', function (data) { 
-            console.log('command center stdout: ' ); 
+            console.log('command center stdout: '); 
             self.sendSocketNotification('COMMAND_RECIEVED', data);
         }); 
     }
