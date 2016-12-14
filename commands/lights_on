@@ -1,2 +1,4 @@
 #!/bin/bash
-echo -n "GET /LIGHTS_ON" | nc 127.0.0.1 5000
+cd modules/lights/rpi_ws281x/python
+sudo PYTHONPATH=".:build/lib.linux-armv7l-2.7" python examples/lit.py on
+cd ~/theia

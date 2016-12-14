@@ -3,8 +3,8 @@ const spawn = require('child_process').spawn;
 
 module.exports = NodeHelper.create({
     start: function () {
+        console.log('Starting node helper for command center');
         this.started = false;
-        
     },
 
     socketNotificationReceived: function(notification, payload) {
@@ -22,7 +22,7 @@ module.exports = NodeHelper.create({
 
         // emit the message to other modules
         proc.stdout.on('data', function (data) { 
-            console.log('command center stdout: '); 
+            console.log('command center stdout: ' + data); 
             self.sendSocketNotification('COMMAND_RECEIVED', data);
         }); 
     }

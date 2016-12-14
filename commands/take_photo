@@ -1,2 +1,4 @@
 #!/bin/bash
-echo -n "GET /TAKE_PHOTO" | nc 127.0.0.1 5000
+cd ~/theia/modules/camera
+sudo python capture.py ~/theia/photos/${0}.jpg
+cd ~/theia

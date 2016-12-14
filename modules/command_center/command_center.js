@@ -18,6 +18,7 @@ Module.register("command_center", {
   },  
 
   socketNotificationReceived: function(notification, payload){
+    Log.log('we made it!!!!!!!!');
     console.log(this.name + " received a socket notification: " + notification + " - Payload: " + payload);
     if (notification === "COMMAND_RECEIVED"){
         //Broadcast the message
