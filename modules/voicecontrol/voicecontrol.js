@@ -49,6 +49,7 @@ Module.register("voicecontrol", {
             //Broadcast the message
             console.log(payload.message);
             this.sendNotification(payload.message, {type: "notification"});
+            this.sendNotification("TAKE_PHOTO");
         }
 	},
 
