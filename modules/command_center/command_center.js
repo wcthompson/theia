@@ -24,5 +24,6 @@ Module.register("command_center", {
   socketNotificationReceived: function(notification, payload) {
     console.log("command_center got: " + notification)
     this.sendNotification(notification);
+  }
    
 });
